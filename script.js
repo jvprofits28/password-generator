@@ -9,14 +9,7 @@ var generateBtn = document.querySelector("#generate");
  uppercaseAlphabet=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
  // lowercase array
  lowerAlphabet=["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x" ,"y", "z"];
-
-//array
-array=[]
- //oblean for confirm windows 
-var password= "false"
-var special="false"
-var upper="false"
-var lower="false"
+ 
 // get user opinion for passworwd characters preference
   passwordLength= prompt("How many characters would you like your password to contain? ");
   confirmLower= confirm("Click OK to confirm including lowercase  characters ")
