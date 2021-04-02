@@ -1,31 +1,68 @@
 // Assignment Code
 //DO NOT CHANGE THIS CODE
 var generateBtn = document.querySelector("#generate");
- //special characters
- var symbols=["!", "#", "$", "%", "&", "*","+","-", ".", "/", ":",];
- //numbers array
- numbers=[1, 2, 3, 4, 5, 6, 7, 8, 9, 0,]
- //uppercases array
- uppercaseAlphabet=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
- // lowercase array
- lowerAlphabet=["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x" ,"y", "z"];
- 
-// get user opinion for passworwd characters preference
-  passwordLength= prompt("How many characters would you like your password to contain? ");
-  confirmLower= confirm("Click OK to confirm including lowercase  characters ")
-  confirmHigher= confirm("Click OK to confirm including  uppercase characters ")
-  confirmCharacters=confirm("Click OK to confirm including special characters ")
-  confirmNumbers= confirm("Click OK to confirm including numeric characters ")
 
-  
-function generatePassword(){
-  if(passwordLength)
+const symbols = "!#$%&*+-./@(^):";
+const numbers = "1234567890";
+const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 
+// this function gather user preference on password 
+function createOptions() {
+  const passwordLength = parseInt(prompt("How many characters would you like your password to contain?(you must choose more than 8 characters or less than 100!)"));
+  if (passwordLength < 8){
+    alert("you must choose more than 8 characters")
+  } else if (passwordLength > 100) {
+    alert("you must choose less than 100 characters!")
+  }
+  const confirmLower = confirm("Click OK to confirm including lowercase  characters ");
+  const confirmHigher = confirm("Click OK to confirm including  uppercase characters ");
+  const confirmCharacters = confirm("Click OK to confirm including special characters ");
+  const confirmNumbers = confirm("Click OK to confirm including numeric characters ");
 
+  let options = {
+    passwordLength,
+    confirmLower,
+    confirmHigher,
+    confirmCharacters,
+    confirmNumbers
+  };
 
- return "extraSecretPassword"
+  return options;
 }
+//this function generates password by gathering user preference
+function generatePassword(){
+  let options = createOptions();
+  let validChars = '';
 
+  if (options.confirmLower) {
+    validChars += lowerCase;
+  }
+
+  if (options.confirmHigher) {
+    validChars += upperCase;
+  }
+
+  if (options.confirmCharacters) {
+    validChars += symbols;
+  }
+
+  if (options.confirmNumbers){
+    validChars += numbers;
+  }
+  // create a storage container for selected characters
+  let password = [];
+  // for loop to iterate for n times
+  for (let i = 0; i < options.passwordLength; i += 1){
+    // select a random character from validChars
+    // push the random character into our storage
+    password.push(validChars[Math.floor(Math.random() * validChars.length)]);
+  }
+  // join all our characters together
+  return password.join('');
+  // return password which is our container joined together
+}
+//to this section 
 // Write password to the #password input
 /* DO NOT CHANGE THIS CODE!  This function is going to call your generatePassword() function and whatever is returned from that function will be put onto the page */
 function writePassword() {
@@ -37,11 +74,6 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-
-
-
-
-
 // DO NOT CHANGE THIS CODE
 generateBtn.addEventListener("click", writePassword);
 
