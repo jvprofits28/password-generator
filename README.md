@@ -18,4 +18,4 @@ MIT
 
 [Github](https://github.com/jvprofits28)
 
-[E-mail](mailto:juanvazqez9828@gmail.com)
+[E-mail](mailto:juanvazquez9828@gmail.com)
