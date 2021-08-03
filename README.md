@@ -1,14 +1,21 @@
-# password-generator links
+# Password generator
 
-website url- https://jvprofits28.github.io/password-generator/
-Git hub repository url- https://github.com/jvprofits28/password-generator
+## Description
 
-# description
+Users today may have as many password-protected accounts. With the increasing threat of identity theft, having secure passwords is more important than ever. I have developed a password generator that is capleble of creating a secure password for users to secure their accounts with no more that hundred characters.
 
-user will be able to generate a password by selecting the characters that they want
-also there not able to select a password less than 8 characters and no more than 100
-characters this password generator will provide a user with an extra secured password
+## Table of content
 
-# screenshot of website with password generated
+- [Links](#Links)
+- [License](#license)
+- [Questions](#Questions)
 
-screenshoot can be found in assets copy
+## License
+
+MIT
+
+## Questions
+
+[Github](https://github.com/jvprofits28)
+
+[E-mail](mailto:juanvazqez9828@gmail.com)
